@@ -1,0 +1,29 @@
+extends layout
+
+block content  
+
+  h2.sub-header=listtitle
+  .table-responsive
+    table.table.table-striped.table-hover
+      thead
+        tr          
+          th To User ID                     
+          th From User
+          th Content                     
+          th Date          
+          th operation
+      tbody
+      each wechatMessageItem in WechatMessages        
+        tr          
+          td
+            i.fa.fa-weixin
+            a=wechatMessageItem.to_wechat_user          
+          td
+            i.fa.fa-weixin
+            a=wechatMessageItem.from_wechat_user
+          td
+            input(type="text",value=wechatMessageItem.content)
+          td=wechatMessageItem.created
+          td
+            a.btn.btn-danger(href="/admin/wechatmessage/delete/"  + wechatMessageItem._id, target="_blank") delete
+            a.btn.btn-success(href="/admin/wechatmessage/reply/"  + wechatMessageItem._id, target="_blank") reply

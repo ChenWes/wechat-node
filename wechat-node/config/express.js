@@ -18,7 +18,6 @@ module.exports = function (app, config) {
 
   app.use(function (req, res, next) {
     app.locals.pagePath = req.path;
-    console.log('-------------------' + app.locals.pagePath);
     next();
   });
 
