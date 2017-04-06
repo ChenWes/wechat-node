@@ -1,6 +1,7 @@
 var path = require('path'),
-    rootPath = path.normalize(__dirname + '/..'),
-    env = process.env.NODE_ENV || 'development';
+  rootPath = path.normalize(__dirname + '/..'),
+  env = process.env.NODE_ENV || 'development',
+  defaultport = 3001;
 
 var config = {
   development: {
@@ -8,8 +9,8 @@ var config = {
     app: {
       name: 'wechat-node'
     },
-    port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/wechat-node-development'
+    port: process.env.PORT || defaultport,
+    db: 'mongodb://localhost/wechat-development'
   },
 
   test: {
@@ -17,7 +18,7 @@ var config = {
     app: {
       name: 'wechat-node'
     },
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || defaultport,
     db: 'mongodb://localhost/wechat-node-test'
   },
 
@@ -26,7 +27,7 @@ var config = {
     app: {
       name: 'wechat-node'
     },
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || defaultport,
     db: 'mongodb://localhost/wechat-node-production'
   }
 };

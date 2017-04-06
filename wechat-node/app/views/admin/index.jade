@@ -1,0 +1,32 @@
+extends layout
+
+block content  
+
+  h2.sub-header=listtitle
+  .table-responsive
+    table.table.table-striped.table-hover
+      thead
+        tr
+          th ID                 
+          th Wechat User ID                     
+          th Wechat User Name                    
+          th Azure User ID                     
+          th Azure User Name
+          th Azure User Email
+          th operation
+      tbody
+      each usermappingItem in UserMappings        
+        tr
+          td=usermappingItem._id 
+          td
+            i.fa.fa-weixin
+            a.btn.btn-default(href="/user/" + usermappingItem.wechat_user)=usermappingItem.wechat_user
+          td=usermappingItem.wechat_name
+          td
+            i.fa.fa-windows
+            =usermappingItem.azure_userid
+          td=usermappingItem.azure_username
+          td=usermappingItem.azure_email
+          td
+            a.btn.btn-primary(href="/usermapping/update/" + usermappingItem._id, target="_blank") update            
+            a.btn.btn-danger(href="/usermapping/delete/"  + usermappingItem._id, target="_blank") delete
