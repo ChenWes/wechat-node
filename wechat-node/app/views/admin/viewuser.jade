@@ -1,0 +1,14 @@
+extends layout
+
+block content  
+
+  h2.sub-header=listtitle
+    div=User.openid
+    div=User.nickname
+    div=User.language
+    div=User.country
+    div=User.province
+    div=User.city
+    a(href="#" class="thumbnail")
+      image(src=User.headimgurl)
+    a.btn.btn-danger(href="/user/delete/", target="_blank") send message

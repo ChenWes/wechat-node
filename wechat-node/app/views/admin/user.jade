@@ -7,16 +7,13 @@ block content
     table.table.table-striped.table-hover
       thead
         tr          
-          th Wechat User ID                     
-          th Wechat User Name                    
+          th Wechat User ID                               
           th operation
       tbody
-      each userItem in Users        
+      each userItem in Users.data.openid        
         tr          
           td
             i.fa.fa-weixin
-            a.btn.btn-default(href="/user/" + userItem.wechat_user)=userItem.wechat_user
-          td=userItem.wechat_name          
+            a(href="/user/" + userItem)=userItem          
           td
-            a.btn.btn-primary(href="/user/update/" + userItem._id, target="_blank") update            
-            a.btn.btn-danger(href="/user/delete/"  + userItem._id, target="_blank") delete
+            a.btn.btn-default(href="/admin/user/"  + userItem, target="_self") view

@@ -21,17 +21,19 @@
     "mongoose": "^4.1.2",
     "morgan": "^1.6.1",
     "serve-favicon": "^2.3.0",
-    "wechat": "^2.1.0"
+    "wechat": "^2.1.0",
+    "wechat-api": "^1.32.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "debug": "^2.2.0",
     "gulp": "^3.9.0",
-    "gulp-nodemon": "^2.0.2",
     "gulp-livereload": "^3.8.0",
+    "gulp-nodemon": "^2.0.2",
     "gulp-plumber": "^1.0.0",
     "mocha": "^3.0.2",
     "nyc": "^10.0.0",
-    "supertest": "^2.0.0"
+    "supertest": "^2.0.0",
+    "wechat-api": "^1.32.0"
   }
 }
