@@ -1,0 +1,22 @@
+extends layout
+
+block content  
+
+  h2.sub-header=listtitle
+  .table-responsive
+    table.table.table-striped.table-hover
+      thead
+        tr          
+          th Wechat User ID                     
+          th Wechat User Name                    
+          th operation
+      tbody
+      each userItem in Users        
+        tr          
+          td
+            i.fa.fa-weixin
+            a.btn.btn-default(href="/user/" + userItem.wechat_user)=userItem.wechat_user
+          td=userItem.wechat_name          
+          td
+            a.btn.btn-primary(href="/user/update/" + userItem._id, target="_blank") update            
+            a.btn.btn-danger(href="/user/delete/"  + userItem._id, target="_blank") delete

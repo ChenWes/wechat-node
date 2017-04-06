@@ -30,23 +30,26 @@ block main
       .row
         .col-sm-3.col-md-2.sidebar
           ul.nav.nav-sidebar
-            li.active
-              a(href="/admin/posts/list")
-                i.fa.fa-files-o
-                | &nbsp;User Mapping List
-                span.sr-only (current)
-            li
-              a(href="/admin/posts/add")
-                i.fa.fa-file-o
-                | &nbsp;Add User Mapping
-            li
-              a(href="/admin/categories/list")
-                i.fa.fa-th-list
-                | &nbsp;User List
-            li
-              a(href="/admin/categories/add")
-                i.fa.fa-plus
-                | &nbsp;Add User
+            if pagePath == "/admin/usermapping"
+              li.active
+                a(href="/admin/usermapping")
+                  i.fa.fa-address-book-o
+                  | &nbsp;User Mapping List                
+            else
+              li
+                a(href="/admin/usermapping")
+                  i.fa.fa-address-book-o
+                  | &nbsp;User Mapping List
+            if pagePath == "/admin/user"
+              li.active
+                a(href="/admin/user")
+                  i.fa.fa-address-card-o                
+                  | &nbsp;User List
+            else            
+              li
+                a(href="/admin/user")
+                  i.fa.fa-address-card-o                
+                  | &nbsp;User List
           ul.nav.nav-sidebar
             li
               a(href="/admin/users/password")

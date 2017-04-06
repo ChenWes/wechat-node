@@ -6,8 +6,7 @@ block content
   .table-responsive
     table.table.table-striped.table-hover
       thead
-        tr
-          th ID                 
+        tr          
           th Wechat User ID                     
           th Wechat User Name                    
           th Azure User ID                     
@@ -16,8 +15,7 @@ block content
           th operation
       tbody
       each usermappingItem in UserMappings        
-        tr
-          td=usermappingItem._id 
+        tr          
           td
             i.fa.fa-weixin
             a.btn.btn-default(href="/user/" + usermappingItem.wechat_user)=usermappingItem.wechat_user
