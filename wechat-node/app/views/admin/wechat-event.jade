@@ -20,7 +20,7 @@ block content
             a=wechatEventItem.ToUserName          
           td
             i.fa.fa-weixin
-            a=wechatEventItem.FromUserName
+            a(href="/admin/user/" + wechatEventItem.FromUserName)=wechatEventItem.FromUserName
           td
             if wechatEventItem.Event === 'subscribe' 
               p Subscribe

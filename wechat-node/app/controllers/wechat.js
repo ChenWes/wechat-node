@@ -6,6 +6,8 @@ var express = require('express'),
   wechat = require('wechat'),
   winston = require('winston');
 
+var directlineHelper = require('../manage/directline_manage');
+
 
 //setting logger
 var logger = new (winston.Logger)({
@@ -23,6 +25,8 @@ var config = {
 };
 
 module.exports = function (app) {
+
+
   app.use('/wechat', wechat(config, wechat.text(function (message, req, res, next) {
     var message = req.weixin;
 
@@ -42,8 +46,20 @@ module.exports = function (app) {
     newMessage.save(function (err, wechatmessage) {
       if (err) return next(err);
     });
+    var touserid = message.FromUserName;
+    //send message entity
+    var messageBody = {
+      "type": "message",
+      "from": {
+        "id": message.FromUserName,
+        "FromUserName": 'WeChatUser'
+      },
+      "text": message.Content
+    };
 
-    res.reply(message.Content);
+    directlineHelper.sendMessageToBotFramework(messageBody, touserid);
+    res.reply('----');
+
     //-----------------------------------------------------------------------------------------------------------
   }).image(function (message, req, res, next) {
     var message = req.weixin;

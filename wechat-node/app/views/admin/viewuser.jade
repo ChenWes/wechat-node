@@ -3,12 +3,15 @@ extends layout
 block content  
 
   h2.sub-header=listtitle
-    div=User.openid
-    div=User.nickname
-    div=User.language
-    div=User.country
-    div=User.province
-    div=User.city
-    a(href="#" class="thumbnail")
-      image(src=User.headimgurl)
-    a.btn.btn-danger(href="/user/delete/", target="_blank") send message
+  a(href="/admin/user").btn.btn-default back
+  div=User.openid
+  div=User.nickname
+  div=User.language
+  div=User.country
+  div=User.province
+  div=User.city
+  div.row
+    div.col-sm-6.col-md-2.col-xs-12.col-xs-3
+      a(href="#" class="thumbnail")
+        image(src=User.headimgurl)
+  a.btn.btn-danger(href="/user/delete/", target="_blank") send message

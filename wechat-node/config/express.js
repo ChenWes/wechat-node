@@ -16,6 +16,7 @@ module.exports = function (app, config) {
   app.set('views', config.root + '/app/views');
   app.set('view engine', 'jade');
 
+  //get path setting global var
   app.use(function (req, res, next) {
     app.locals.pagePath = req.path;
     next();
@@ -30,19 +31,22 @@ module.exports = function (app, config) {
   app.use(cookieParser());
   app.use(compress());
   app.use(express.static(config.root + '/public'));
-  app.use(methodOverride());
+  app.use(methodOverride());  
 
+  //setting all router
   var controllers = glob.sync(config.root + '/app/controllers/*.js');
   controllers.forEach(function (controller) {
     require(controller)(app);
   });
 
+  //404
   app.use(function (req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
   });
 
+  //if error render error view
   if (app.get('env') === 'development') {
     app.use(function (err, req, res, next) {
       res.status(err.status || 500);
@@ -54,6 +58,7 @@ module.exports = function (app, config) {
     });
   }
 
+  //if error render error view
   app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
