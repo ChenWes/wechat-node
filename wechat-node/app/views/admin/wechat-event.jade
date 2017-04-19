@@ -1,0 +1,34 @@
+extends layout
+
+block content  
+
+  h2.sub-header=listtitle
+  .table-responsive
+    table.table.table-striped.table-hover
+      thead
+        tr          
+          th To User ID                     
+          th From User
+          th Event                     
+          th Date          
+          th operation
+      tbody
+      each wechatEventItem in WechatEvents        
+        tr          
+          td
+            i.fa.fa-weixin
+            a=wechatEventItem.ToUserName          
+          td
+            i.fa.fa-weixin
+            a=wechatEventItem.FromUserName
+          td
+            if wechatEventItem.Event === 'subscribe' 
+              p Subscribe
+            else if wechatEventItem.Event === 'unsubscribe' 
+              p UnSubscribe
+            else               
+              p=wechatEventItem.Event
+
+          td=wechatEventItem.created
+          td
+            a.btn.btn-danger(href="/admin/wechatevent/delete/"  + wechatEventItem._id, target="_self") delete

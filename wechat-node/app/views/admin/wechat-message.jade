@@ -25,5 +25,5 @@ block content
             input(type="text",value=wechatMessageItem.content)
           td=wechatMessageItem.created
           td
-            a.btn.btn-danger(href="/admin/wechatmessage/delete/"  + wechatMessageItem._id, target="_blank") delete
-            a.btn.btn-success(href="/admin/wechatmessage/reply/"  + wechatMessageItem._id, target="_blank") reply
+            a.btn.btn-danger(href="/admin/wechatmessage/delete/"  + wechatMessageItem._id, target="_self") delete
+            a.btn.btn-success(href="/admin/wechatmessage/reply/"  + wechatMessageItem._id, target="_self") reply

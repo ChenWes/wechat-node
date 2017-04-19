@@ -50,6 +50,7 @@ block main
                 a(href="/admin/user")
                   i.fa.fa-address-card-o                
                   | &nbsp;User List
+
             if pagePath == "/admin/wechatmessage"
               li.active
                 a(href="/admin/wechatmessage")
@@ -60,6 +61,19 @@ block main
                 a(href="/admin/wechatmessage")
                   i.fa.fa-commenting
                   | &nbsp;Wechat Message List
+
+
+            if pagePath == "/admin/wechatevent"
+              li.active
+                a(href="/admin/wechatevent")
+                  i.fa.fa-flash                
+                  | &nbsp;Wechat Event List
+            else            
+              li
+                a(href="/admin/wechatevent")
+                  i.fa.fa-flash
+                  | &nbsp;Wechat Event List
+
           ul.nav.nav-sidebar
             li
               a(href="/admin/users/password")
