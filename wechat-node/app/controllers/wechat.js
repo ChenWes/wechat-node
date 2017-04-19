@@ -58,7 +58,7 @@ module.exports = function (app) {
     };
 
     directlineHelper.sendMessageToBotFramework(messageBody, touserid);
-    res.reply('----');
+    res.reply('');
 
     //-----------------------------------------------------------------------------------------------------------
   }).image(function (message, req, res, next) {

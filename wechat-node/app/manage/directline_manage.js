@@ -177,11 +177,15 @@ module.exports = {
                     for (let imgkey in images) {
                         let imageurl = images[imgkey].url;
                         if (imageurl) {
+                            var imageTempDirectory = './tempImage/';
+                            if (!fs.existsSync(imageTempDirectory)) {
+                                fs.mkdirSync(imageTempDirectory);
+                            }
                             //down load image to local
                             let imageTempName = url.parse(imageurl, true).query.fileName;
-                            yield wechatHelper.downloadImageToLocal(imageurl, './tempImage/' + imageTempName);
+                            yield wechatHelper.downloadImageToLocal(imageurl, imageTempDirectory + imageTempName);
                             //upload to wechat server
-                            let serverresult = yield wechatHelper.uploadImageToServer('./tempImage/' + imageTempName, 'image');
+                            let serverresult = yield wechatHelper.uploadImageToServer(imageTempDirectory + imageTempName, 'image');
                             fs.unlink('tempImage/' + imageTempName);
                             //send image
                             if (serverresult) {
