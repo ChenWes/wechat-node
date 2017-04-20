@@ -38,6 +38,20 @@ module.exports = {
             })
         })
     },
+    getFollowers: function () {
+        return new Promise((done, fail) => {
+            api.getFollowers((err, result) => {
+                err ? fail(err) : done(result);
+            });
+        })
+    },
+    getUser: function (userID) {
+        return new Promise((done, fail) => {
+            api.getUser({ openid: userID, lang: 'en' }, (err, result) => {
+                err ? fail(err) : done(result);
+            });
+        })
+    },
     downloadImageToLocal: function (url, filename) {
         return new Promise((done, fail) => {
             request(url).on('error', fail).pipe(fs.createWriteStream(filename).on('finish', () => {
