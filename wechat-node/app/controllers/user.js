@@ -12,6 +12,10 @@ module.exports = function (app) {
 
 
 router.get('/admin/user', function (req, res, next) {
+  // var code = req.params.code;
+
+  console.log(req.param);
+
   wechatHelper.getFollowers()
     .then((Data) => {
       res.render('admin/user', {

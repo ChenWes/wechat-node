@@ -10,14 +10,29 @@ module.exports = function (app) {
 
 //get list
 router.get('/admin/wechatmessage', function (req, res, next) {
-  WechatMessage.find(function (err, wechatmessages) {
+  var query = WechatMessage.find({});
+
+  // query.where('field', 5);
+  query.limit(5);//get 5 record
+  query.skip(20);//get from 21
+
+  query.exec(function (err, docs) {
     if (err) return next(err);
     res.render('admin/wechat-message', {
       title: 'WeChat Dashboard - WeChat Message Mapping',
       listtitle: 'WeChat Message List',
-      WechatMessages: wechatmessages
+      WechatMessages: docs
     });
   });
+
+  // WechatMessage.find(function (err, wechatmessages) {
+  //   if (err) return next(err);
+  //   res.render('admin/wechat-message', {
+  //     title: 'WeChat Dashboard - WeChat Message Mapping',
+  //     listtitle: 'WeChat Message List',
+  //     WechatMessages: wechatmessages
+  //   });
+  // });
 });
 
 //delete

@@ -47,7 +47,7 @@ module.exports = {
     },
     getUser: function (userID) {
         return new Promise((done, fail) => {
-            api.getUser({ openid: userID, lang: 'en' }, (err, result) => {
+            api.getUser({ openid: userID, lang: 'zh_CN' }, (err, result) => {
                 err ? fail(err) : done(result);
             });
         })

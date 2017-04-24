@@ -25,7 +25,7 @@ var app = express();
 module.exports = require('./config/express')(app, config);
 
 //first time directline get token
-directline_manage.getTokenAndGetConverstation(config.directlineSecret, config.wechat);
+directline_manage.getTokenAndGetConverstation(config.directlineSecret, config.wechatBasic);
 
 
 app.listen(config.port, function () {

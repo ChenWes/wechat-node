@@ -24,3 +24,5 @@
 bootstrap ```bower install --save bootstrap```
 
 font-awesome ```bower install --save components-font-awesome```
+
+如第一次下载完整代码下来，应该使用```bower install```来安装对应的组件
