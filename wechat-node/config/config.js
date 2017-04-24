@@ -14,7 +14,7 @@ wechatManageConfig = {
   manageUser: 'oykr00-hJ_yxEMPnAUDHoSfsWymc',//wechat manage user id
   logWechat: true,//log flag    
   authUrl: 'http://weschen.imwork.net/auth/',
-  authTextConfig: 'Your current account is not authorized \r\n<a href={@url}>Get Authorized</a>\r\nLPD WeChat'
+  authTextConfig: 'Your Current Wechat Account Is Not Authorized \r\n/:coffee<a href={@url}>WeChat Get Authorize</a>\r\nEsquel LPD Bot WeChat'
 };
 
 var config = {

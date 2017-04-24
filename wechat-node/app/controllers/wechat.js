@@ -64,9 +64,9 @@ module.exports = function (app) {
       if (!result) {
         wechatOAuthHelper.getAuthorizeURL(wechatManageConfig.authUrl, 'STATE', 'snsapi_userinfo')
           .then((url) => {
-            console.log(url);
+            // console.log(url);
             var newurl = wechatManageConfig.authTextConfig.replace('{@url}', '"' + url + '"');
-            console.log(newurl);
+            // console.log(newurl);
             res.reply(newurl);
           })
           .catch((err) => {

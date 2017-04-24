@@ -1,5 +1,11 @@
 extends ./layout
 
 block main  
-  h1=code  
+  div(class='alert alert-info') Authorize Page  
+  form(action='/auth/',method='POST')
+    input(type='hidden',name="wechat",value=openid)
+    div(class='input-group')      
+      input(name="email")
+      <span class="input-group-addon" id="basic-addon2">@esquel.com</span>
+    <input class="btn btn-default" type="submit" value="Submit" />
   

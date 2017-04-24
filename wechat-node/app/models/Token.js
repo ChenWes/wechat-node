@@ -25,9 +25,9 @@ TokenSchema.statics.setToken = function (openid, token, cb) {
   var options = { upsert: true };
   this.update(query, token, options, function (err, result) {
     if (err) throw err;
-    return cb(null);
+    return cb(result);
   });
 };
 
-mongoose.model('Token', TokenSchema);
+mongoose.model('token', TokenSchema);
 
