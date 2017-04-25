@@ -1,6 +1,10 @@
 jQuery(function () {
-    var getUser = loginIfTokenOverdue();
-    // if (getUser) {
-    //     alert(getUser);
-    // }
+    loginIfTokenOverdue()
+        .then(function (result) {
+            console.log(result);
+            alert(result.userName);
+        })
+        .catch((err) => {
+            alert(err);
+        });
 });

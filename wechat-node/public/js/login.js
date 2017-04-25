@@ -31,7 +31,7 @@
                 reject(error);
             }
             else{
-                console.log(user);
+                // console.log(user);
                 resolve(user);
             }
         });
@@ -48,7 +48,7 @@
     var loginIfTokenOverdue = () => {
         return getUser()
         .then((data) => {
-            console.log('user:' + data.userName);
+            // console.log('user:' + data.userName);
             return data;
         })
         .catch((error) => {
