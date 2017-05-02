@@ -2,7 +2,7 @@ var path = require('path'),
   rootPath = path.normalize(__dirname + '/..'),
   env = process.env.NODE_ENV || 'development',
   defaultport = 3001,
-  bot_secret = 'JmQLHOoxqeg.cwA.UqE.ZeXqmfJ5ncjzD9ZcoOe4tvOW7VDhVHZCMjfEEyZsNDo',
+  bot_secret = 'UEa5EW2iyKI.cwA.a6M.-4dB90kHdYYrVRS288ZiSkmyhRKE9dAVB4uGJKA30bQ',
   wechatBasicConfig = {
     appsecret: '30a5f51682755652e6e02879757a0fb1',
     token: 'weixin',
@@ -14,7 +14,7 @@ wechatManageConfig = {
   manageUser: 'oykr00-hJ_yxEMPnAUDHoSfsWymc',//wechat manage user id
   logWechat: true,//log flag    
   authUrl: 'http://weschen.imwork.net/auth/',
-  authTextConfig: 'Your Current Wechat Account Is Not Authorized \r\n/:coffee<a href={@url}>WeChat Get Authorize</a>\r\nEsquel LPD Bot WeChat'
+  authTextConfig: 'Your Current Wechat Account Is Not Authorized \r\n/:coffee<a href={@url}>Get WeChat Authorization</a>\r\nEsquel LPD Bot WeChat Channel'
 };
 
 var config = {
